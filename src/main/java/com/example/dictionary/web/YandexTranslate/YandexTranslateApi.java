@@ -3,7 +3,6 @@ package com.example.dictionary.web.YandexTranslate;
 import com.example.dictionary.web.controller.TranslateController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,14 +12,13 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.Date;
 
-@Component
 public class YandexTranslateApi {
 
     private static final Logger logger = LoggerFactory.getLogger(TranslateController.class);
 
     public String translate(String key, String text, String sourceLang, String targetLang) throws IOException {
         URL url = new URL("https://translate.yandex.net/api/v1.5/tr.json/translate?key=" + key + "&text=" + text + "&lang=" + sourceLang + "-" + targetLang);
-        logger.info(new Date()+" Yandex Translate Api call: "+url);
+        logger.info(new Date() + " Yandex Translate Api call: " + url);
         URLConnection urlConn = url.openConnection();
         urlConn.setDoOutput(true);
         InputStream inStream = urlConn.getInputStream();

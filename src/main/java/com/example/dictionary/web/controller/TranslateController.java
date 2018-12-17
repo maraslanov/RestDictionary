@@ -33,6 +33,7 @@ public class TranslateController {
     @ApiOperation(value = "yandex translate")
     @RequestMapping(value = "/translate", method = RequestMethod.GET)
     public ResponseEntity<String> getYandexTranslaltion(@RequestParam("text") String text, @RequestParam("from") String from, @RequestParam("to") String to) {
+        logger.info("call YandexTranslaltion : text=" + text + " from=" + from + " to=" + to);
         ResponseEntity<String> response = null;
         StringBuilder text2 = new StringBuilder();
         if (StringUtils.isNotBlank(text) && StringUtils.isNotBlank(to) && StringUtils.isNotBlank(from)) {
@@ -54,7 +55,7 @@ public class TranslateController {
                 List<String> words = Arrays.asList(text.trim().split(" "));
                 //translate
                 YandexTranslateApi api = new YandexTranslateApi();
-                for (String word: words) {
+                for (String word : words) {
                     try {
                         JSONObject obj = new JSONObject(api.translate(key, word, from, to));
                         JSONArray translation = obj.getJSONArray("text");
