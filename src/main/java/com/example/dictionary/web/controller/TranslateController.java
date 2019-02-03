@@ -40,7 +40,7 @@ public class TranslateController {
      * @param text текст для перевода
      * @param from язык, с которого необходимо перевести текст, в скоращенном виде из 2 символом (см. описание апи)
      * @param to язык, на который необходимо перевести текст, в скоращенном виде из 2 символом (см. описание апи)
-     * @return http ответ после обработки, в header статус ответа, в body переведенный текст/описание ошибки запроса
+     * @return http ответ после обработки, http header + http статус, в body переведенный текст/описание ошибки запроса
      */
     @ApiOperation(value = "yandex translate")
     @RequestMapping(value = "/translate", method = RequestMethod.GET)
