@@ -1,5 +1,8 @@
 package com.example.dictionary.web.YandexTranslate;
 
+/**
+ * Перечисление поддерживаемых Api Переводчиком языков (см. описание YandexTranslate api)
+ */
 public enum Languages {
     ALBANIAN("sq"),
     ARMENIAN("hy"),
@@ -38,7 +41,7 @@ public enum Languages {
 
     private final String language;
 
-    private Languages(final String pLanguage) {
+    Languages(final String pLanguage) {
         language = pLanguage;
     }
 

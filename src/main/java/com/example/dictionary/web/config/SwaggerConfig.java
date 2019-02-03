@@ -11,6 +11,9 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.util.Collections;
 
+/**
+ * Класс, конфигурирующий документацию к апи и общие данные
+ */
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
@@ -22,6 +25,11 @@ public class SwaggerConfig {
                 .build()
                 .apiInfo(apiInfo());
     }
+
+    /**
+     * Общее описание приложения + ссылка на сайт автора
+     * @return
+     */
     @Value("${mysite}")
     private ApiInfo apiInfo() {
         return new ApiInfo(
